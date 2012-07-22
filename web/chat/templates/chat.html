@@ -4,13 +4,13 @@
         <link rel="stylesheet" type="text/css" href="{{ static_url('site.css') }}" />
 	<script type="text/javascript">
 		$(function() {
-			window_width = window.outerWidth;
-			window_height = window.outerHeight;
-		$(".chat_input").css("width", window_width);
-		$(".text_input").css("width", (3*window_width) / 4);
-		$(".submit_input").css("width", window_width / 5);
+			var window_width = window.outerWidth;
+			var window_height = window.outerHeight;
+            $(".chat_input").css("width", window_width);
+            $(".text_input").css("width", (3*window_width) / 4);
+            $(".submit_input").css("width", window_width / 5);
 		});
-	<script>
+	</script>
     </head>
     <body>
         <br />
