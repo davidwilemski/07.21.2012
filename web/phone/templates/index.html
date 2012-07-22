@@ -12,7 +12,7 @@
 
         <script>
             window.onload = function() {
-                $('.submit').click(function() {
+                $('#submit').click(function() {
                     var iframe = document.createElement('iframe');
                     iframe.src = 'call:##sendToApp##' + $('#number').val();
                     document.documentElement.appendChild(iframe);
