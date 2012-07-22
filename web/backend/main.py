@@ -7,8 +7,8 @@ import tornado.options
 define("port", default=8888, help="run on the given port", type=int)
 define("cookie_secret", help="your web app's cookie secret",
        default="bleh")
-define("cookie_secret", help="your web app's cookie secret",
-       default="")
+define("mongo", help="your mongo connection details",
+       default="mongodb://localhost/greylock")
 
 def main():
     print options.cookie_secret
