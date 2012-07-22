@@ -1,4 +1,4 @@
 tornado==2.3
 APNSWrapper==0.6.1
 mongoengine
-supervisord
+supervisor
