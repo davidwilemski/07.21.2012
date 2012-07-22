@@ -16,7 +16,8 @@ class CreateHandler(base.BaseHandler):
         ipad_url = self.get_argument('ipad_icon')
 
         app = models.App(name=appname, domain=domain)
-        app.icon = icon_url
+        app.iphone_url = iphone_url
+        app.ipad_url = ipad_url
         app.save()
 
         self.finish()
