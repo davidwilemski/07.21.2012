@@ -8,4 +8,6 @@ class App(mongoengine.Document):
     ipad_icon = mongoengine.URLField()
 
     def to_dict(self):
-        return self.__dict__
+        d = {'appname': self.name, 'domain': self.domain, 
+                'iphone_icon': self.iphone_icon, 'ipad_icon': self.ipad_icon}
+        return d
