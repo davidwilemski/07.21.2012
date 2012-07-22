@@ -1,0 +1,13 @@
+<html>
+    <body>
+        {% for time, c in chat %}
+            {{ c.msg }}
+            <br />
+        {% end %}
+
+        <form action="/chat/{{ otheruser }}" method="POST">
+            <input type="text" name="msg" />
+            <input type="submit" value="send" />
+        </form>
+    </body>
+</html>
