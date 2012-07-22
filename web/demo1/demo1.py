@@ -1,13 +1,28 @@
 import tornado.ioloop
 import tornado.web
+import tornado.gen
+import os
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("Hello, world")
+        self.render("index.html")
 
+class PushHandler(tornado.web.RequestHandler):
+    @tornado.web.asynchronous
+    @tornado.gen.engine
+    def get(self, device_token):
+        yield gen.Task(send_push, device_token, 'demo1', 'http://23.21.143.75:8889')
+        self.redirect('/')
+
+
+settings = {
+    'template_path': os.path.join(os.path.dirname(__file__), "templates"),
+    
+}
 application = tornado.web.Application([
     (r"/", MainHandler),
-])
+    (r"/sendpush/([a-zA-Z0-9]+)", PushHandler),
+], **settings)
 
 if __name__ == "__main__":
     application.listen(8889)
