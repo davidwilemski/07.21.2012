@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		308D2A7615BC045D00070C9D /* AppWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7515BC045D00070C9D /* AppWebView.m */; };
 		B20145BC15BBBFC100576005 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BB15BBBFC100576005 /* UIKit.framework */; };
 		B20145BE15BBBFC100576005 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BD15BBBFC100576005 /* Foundation.framework */; };
 		B20145C015BBBFC100576005 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BF15BBBFC100576005 /* CoreGraphics.framework */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		308D2A7415BC045D00070C9D /* AppWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppWebView.h; sourceTree = "<group>"; };
+		308D2A7515BC045D00070C9D /* AppWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppWebView.m; sourceTree = "<group>"; };
 		B20145B715BBBFC100576005 /* Games4u.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Games4u.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20145BB15BBBFC100576005 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B20145BD15BBBFC100576005 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,6 +166,8 @@
 				B20145D015BBBFC100576005 /* MainStoryboard_iPad.storyboard */,
 				B20145D315BBBFC100576005 /* ViewController.h */,
 				B20145D415BBBFC100576005 /* ViewController.m */,
+				308D2A7415BC045D00070C9D /* AppWebView.h */,
+				308D2A7515BC045D00070C9D /* AppWebView.m */,
 				B201462515BBC7E400576005 /* DisplayImage.h */,
 				B201462615BBC7E400576005 /* DisplayImage.m */,
 				B20145FB15BBC06000576005 /* BaseViewController.h */,
@@ -358,6 +363,7 @@
 				B201462315BBC3A000576005 /* SBJsonUTF8Stream.m in Sources */,
 				B201462415BBC3A000576005 /* SBJsonWriter.m in Sources */,
 				B201462715BBC7E400576005 /* DisplayImage.m in Sources */,
+				308D2A7615BC045D00070C9D /* AppWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

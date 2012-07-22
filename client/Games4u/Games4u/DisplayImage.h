@@ -12,11 +12,12 @@
 {
     NSMutableData *connection_data;
     id delegate;
+    int index;
 }
 @property (nonatomic, strong) id delegate;
 @property (nonatomic, strong) NSString *domain;
 
-- (id) initWithURL:(NSString*)url andDomain:(NSString*)domain andDelegate:(id)delegate;
+- (id) initWithURL:(NSString*)url andDomain:(NSString*)domain andIndex:(int)idx andDelegate:(id)delegate;
 - (void) makeHTTPConnection:(NSString*)url withParams:(NSMutableDictionary*)dict;
 - (void) HTTPRequestFailed:(NSURLResponse *)response;
 - (void) HTTPRequestFinished:(NSMutableDictionary*)body;

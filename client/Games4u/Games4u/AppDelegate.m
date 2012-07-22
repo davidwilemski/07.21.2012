@@ -12,14 +12,42 @@
 
 @synthesize window = _window;
 @synthesize hostURL = _hostURL;
+@synthesize pushNotificationToken = _pushNotificationToken;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.hostURL = @"http://";
+    self.hostURL = @"http://23.21.143.75:8888";
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    
+    /*if(launchOptions != nil) { 
+        NSDictionary* dict = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if(dict != nil && ![self.usercookie isEqualToString:@""]) {
+            if([self.is_verified isEqualToString:@"Yes"])
+                [self addMessageFromRemoteNotification:dict updateUI:NO];
+            else 
+                self.push_dict = dict;
+        }
+    }*/
     return YES;
 }
-							
+				
+- (void)application:(UIApplication*) application  didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSLog(@"MY device token is: %@", deviceToken);
+    self.pushNotificationToken = deviceToken;
+}
+
+-(void) application:(UIApplication*) application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
+}
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
+{
+	
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

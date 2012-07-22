@@ -9,30 +9,39 @@
 #import "DisplayImage.h"
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation DisplayImage
 
 @synthesize delegate = _delegate;
 @synthesize domain = _domain;
 
-- (id) initWithURL:(NSString*)url andDomain:(NSString*)domain andDelegate:(id)delegate {
+- (id) initWithURL:(NSString*)url andDomain:(NSString*)domain andIndex:(int)idx andDelegate:(id)delegate {
     self = [super init];
     if(self) {
         [self makeHTTPConnection:url withParams:[[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:@"GET", @"", nil] forKeys:[NSArray arrayWithObjects:@"request_method", @"body", nil]]];
         [self setUserInteractionEnabled:YES];
         self.domain = domain;
+        //Add some shadows, for the pretty
+        [self.layer setShadowColor:[[UIColor blackColor] CGColor]];
+        [self.layer setShadowOffset:CGSizeMake(0.0, 2.0)];
+        [self.layer setShadowOpacity:0.6];
+        [self.layer setShadowRadius:3.0];
+        self.delegate = delegate;
+        index = idx;
     }
     return self;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [(ViewController*)self.delegate initTouchForAppDomain:self.domain];
 }
 
 
 - (void) makeHTTPConnection:(NSString*)url withParams:(NSMutableDictionary*)dict {
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    NSURL *req_url = [NSURL URLWithString:[app getConcantenatedHostUrl:url]];
+    NSLog(@"URL: %@", url);
+    NSURL *req_url = [NSURL URLWithString:url];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:req_url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     
     NSString* requestMethod = [dict objectForKey:@"request_method"];
@@ -73,11 +82,12 @@
     [self setImage:img];
     CGRect frame;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        frame = CGRectMake(0.0, 0.0, 160.0, 240.0);
+        frame = CGRectMake(24.0, 86.0, 192.0, 256.0);
     } else {
-        frame = CGRectMake(0.0, 0.0, 160.0, 240.0);
+        frame = CGRectMake(80.0, 86.0, 160.0, 240.0);
     }
     [self setFrame:frame];
+    [self setContentMode:UIViewContentModeScaleAspectFit];
     [((ViewController*)self.delegate) incrementImgLoadCount];
     connection_data = nil;
 }
