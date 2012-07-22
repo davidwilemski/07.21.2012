@@ -70,6 +70,7 @@ class ChatRoomHandler(BaseHandler):
 
 settings = {
     'template_path': os.path.join(os.path.dirname(__file__), "templates"),
+    'static_path': os.path.join(os.path.dirname(__file__), "static"),
     'cookie_secret': 'ins3cur3',
     'debug': True,
     
