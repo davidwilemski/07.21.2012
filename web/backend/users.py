@@ -17,4 +17,5 @@ class LoginHandler(base.BaseHandler):
             user = models.User(username=username, device_token=device_token)
         user.device_token = device_token
         user.save()
+        self.finish()
 
