@@ -25,7 +25,7 @@ class Chat(mongoengine.Document):
         return chat
 
     def add_msg(self, author, msg):
-        self.messages[str(time.time())] = {
+        self.messages[str(int(time.time()))] = {
             'author': author,
             'msg': msg
         }
