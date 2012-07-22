@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <h1>demo 2</h2>
+        <a class="push_button" href="#">Send Push</a> 
+
+        <script>
+            window.onload = function() {
+                var iframe = document.createElement('iframe');
+                iframe.src = 'push:##sendToApp##get';
+                document.documentElement.appendChild(iframe);
+                iframe.parentNode.removeChild(iframe);
+                iframe = null;
+            };
+
+            function getToken(token) {
+                $(".push_button").on("click", function () {
+                    $.get('/sendpush/' + token);
+                });
+            }
+        </script>
+    </body>
+</html>
