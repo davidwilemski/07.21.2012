@@ -1,0 +1,15 @@
+.chat_input {
+	position: absolute;
+	bottom: 0px;
+	height: 44px;
+	background-color: #aaa;
+	padding: 4px;
+}
+.text_input {
+	float: left;
+	width: 75%;
+}
+.chat_input {
+	float: right;
+	width: 20%;
+}

@@ -10,6 +10,7 @@
 		308D2A7615BC045D00070C9D /* AppWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7515BC045D00070C9D /* AppWebView.m */; };
 		308D2A7A15BC755500070C9D /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7915BC755500070C9D /* LoginPageViewController.m */; };
 		308D2A7D15BC77EF00070C9D /* LoginSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7C15BC77EF00070C9D /* LoginSegue.m */; };
+		30DE5CAC15BC7E3C0017585D /* libTwilioClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DE5CA515BC7E3C0017585D /* libTwilioClient.a */; };
 		B20145BC15BBBFC100576005 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BB15BBBFC100576005 /* UIKit.framework */; };
 		B20145BE15BBBFC100576005 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BD15BBBFC100576005 /* Foundation.framework */; };
 		B20145C015BBBFC100576005 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BF15BBBFC100576005 /* CoreGraphics.framework */; };
@@ -57,6 +58,13 @@
 		308D2A7915BC755500070C9D /* LoginPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPageViewController.m; sourceTree = "<group>"; };
 		308D2A7B15BC77EF00070C9D /* LoginSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSegue.h; sourceTree = "<group>"; };
 		308D2A7C15BC77EF00070C9D /* LoginSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSegue.m; sourceTree = "<group>"; };
+		30DE5CA515BC7E3C0017585D /* libTwilioClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTwilioClient.a; path = Games4u/thirdparty/libTwilioClient.a; sourceTree = "<group>"; };
+		30DE5CA615BC7E3C0017585D /* TCConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCConnection.h; path = Games4u/thirdparty/TCConnection.h; sourceTree = "<group>"; };
+		30DE5CA715BC7E3C0017585D /* TCConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCConnectionDelegate.h; path = Games4u/thirdparty/TCConnectionDelegate.h; sourceTree = "<group>"; };
+		30DE5CA815BC7E3C0017585D /* TCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCDevice.h; path = Games4u/thirdparty/TCDevice.h; sourceTree = "<group>"; };
+		30DE5CA915BC7E3C0017585D /* TCDeviceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCDeviceDelegate.h; path = Games4u/thirdparty/TCDeviceDelegate.h; sourceTree = "<group>"; };
+		30DE5CAA15BC7E3C0017585D /* TCPresenceEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPresenceEvent.h; path = Games4u/thirdparty/TCPresenceEvent.h; sourceTree = "<group>"; };
+		30DE5CAB15BC7E3C0017585D /* TwilioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwilioClient.h; path = Games4u/thirdparty/TwilioClient.h; sourceTree = "<group>"; };
 		B20145B715BBBFC100576005 /* Games4u.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Games4u.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20145BB15BBBFC100576005 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B20145BD15BBBFC100576005 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +124,7 @@
 				B20145BC15BBBFC100576005 /* UIKit.framework in Frameworks */,
 				B20145BE15BBBFC100576005 /* Foundation.framework in Frameworks */,
 				B20145C015BBBFC100576005 /* CoreGraphics.framework in Frameworks */,
+				30DE5CAC15BC7E3C0017585D /* libTwilioClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +229,13 @@
 		B20145FF15BBC39000576005 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				30DE5CA515BC7E3C0017585D /* libTwilioClient.a */,
+				30DE5CA615BC7E3C0017585D /* TCConnection.h */,
+				30DE5CA715BC7E3C0017585D /* TCConnectionDelegate.h */,
+				30DE5CA815BC7E3C0017585D /* TCDevice.h */,
+				30DE5CA915BC7E3C0017585D /* TCDeviceDelegate.h */,
+				30DE5CAA15BC7E3C0017585D /* TCPresenceEvent.h */,
+				30DE5CAB15BC7E3C0017585D /* TwilioClient.h */,
 				B201460015BBC3A000576005 /* NSObject+SBJson.h */,
 				B201460115BBC3A000576005 /* NSObject+SBJson.m */,
 				B201460215BBC3A000576005 /* SBJson.h */,
@@ -487,6 +503,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Games4u/Games4u-Prefix.pch";
 				INFOPLIST_FILE = "Games4u/Games4u-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Games4u/thirdparty\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF02CB4D-C4CD-4AFE-A77F-17A2DEE1D211";
 				WRAPPER_EXTENSION = app;
@@ -499,6 +519,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Games4u/Games4u-Prefix.pch";
 				INFOPLIST_FILE = "Games4u/Games4u-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Games4u/thirdparty\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

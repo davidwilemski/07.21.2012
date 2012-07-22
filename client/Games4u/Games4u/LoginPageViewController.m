@@ -29,7 +29,7 @@
 
 - (IBAction)send:(id)sender 
 {
-
+    NSLog(@"hey");
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     [self makeHTTPConnection:[NSString stringWithFormat:@"/login?username=%@&device_token=%@",[self.field text], [app hexadecimalStringWithData:app.pushNotificationToken ]]  withParams:[self createStandardRequestDict]];
     app.currentUser = self.field.text; //When you're tired, you do things like this.
@@ -40,6 +40,7 @@
 
 - (void)HTTPRequestFinished:(NSMutableDictionary *)body
 {
+    NSLog(@"hey");
     [self performSegueWithIdentifier:@"LoginSegue" sender:self];
 }
 
