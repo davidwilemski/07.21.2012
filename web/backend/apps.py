@@ -12,8 +12,8 @@ class CreateHandler(base.BaseHandler):
     def post(self):
         appname = self.get_argument('appname')
         domain = self.get_argument('domain')
-        iphone_url = self.get_argument('iphone_url')
-        ipad_url = self.get_argument('ipad_url')
+        iphone_url = self.get_argument('iphone_icon')
+        ipad_url = self.get_argument('ipad_icon')
 
         app = models.App(name=appname, domain=domain)
         app.icon = icon_url
