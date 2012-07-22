@@ -41,7 +41,7 @@ class ChatHandler(BaseHandler):
         """ returns list of chat contacts"""
         user = self.get_current_user()
         users = models.User.objects
-        self.render('contacts.html', users=users)
+        self.render('contacts.html', users=users, user=user)
 
 class ChatRoomHandler(BaseHandler):
     @tornado.web.authenticated
