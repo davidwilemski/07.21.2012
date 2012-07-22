@@ -12,5 +12,5 @@ class TwimlHandler(base.BaseHandler):
         number = self.get_argument('number', '')
         self.set_header('Content-Type', 'text/xml')
         self.write(
-                '<Response><Dial callerid="{}">{}</Dial></Response>'.format(
+                '<Response><Dial callerid="{}"><Number>{}</Number></Dial></Response>'.format(
                     conf.callerid, number))
