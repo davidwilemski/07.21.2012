@@ -1,6 +1,16 @@
 <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{{ static_url('site.css') }}" />
+	<script type="text/javascript">
+		$(function() {
+			window_width = window.outerWidth;
+			window_height = window.outerHeight;
+		});
+		$(".chat_input").css("width", window_width);
+		$(".text_input").css("width", (3*window_width) / 4);
+		$(".submit_input").css("width", window_width / 5);
+	<script>
     </head>
     <body>
         <br />

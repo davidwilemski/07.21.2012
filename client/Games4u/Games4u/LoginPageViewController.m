@@ -29,7 +29,6 @@
 
 - (IBAction)send:(id)sender 
 {
-    NSLog(@"hey");
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     [self makeHTTPConnection:[NSString stringWithFormat:@"/login?username=%@&device_token=%@",[self.field text], [app hexadecimalStringWithData:app.pushNotificationToken ]]  withParams:[self createStandardRequestDict]];
     app.currentUser = self.field.text; //When you're tired, you do things like this.
@@ -43,8 +42,8 @@
     NSString *token = [body objectForKey:@"token"];
     NSLog(@"Twilio Token: %@", token);
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    app._device = [[TCDevice alloc] initWithCapabilityToken:token
-                                                   delegate:app];
+    if(token) 
+        app._device = [[TCDevice alloc] initWithCapabilityToken:token delegate:app];
     
     [self performSegueWithIdentifier:@"LoginSegue" sender:self];
 }

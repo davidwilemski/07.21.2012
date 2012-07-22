@@ -11,6 +11,10 @@
 		308D2A7A15BC755500070C9D /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7915BC755500070C9D /* LoginPageViewController.m */; };
 		308D2A7D15BC77EF00070C9D /* LoginSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7C15BC77EF00070C9D /* LoginSegue.m */; };
 		30DE5CAC15BC7E3C0017585D /* libTwilioClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DE5CA515BC7E3C0017585D /* libTwilioClient.a */; };
+		30DE5CAF15BC85320017585D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DE5CAE15BC85320017585D /* CFNetwork.framework */; };
+		30DE5CB115BC85530017585D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DE5CB015BC85530017585D /* AudioToolbox.framework */; };
+		30DE5CB315BC85600017585D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DE5CB215BC85600017585D /* AVFoundation.framework */; };
+		30DE5CB515BC857D0017585D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DE5CB415BC857D0017585D /* SystemConfiguration.framework */; };
 		B20145BC15BBBFC100576005 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BB15BBBFC100576005 /* UIKit.framework */; };
 		B20145BE15BBBFC100576005 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BD15BBBFC100576005 /* Foundation.framework */; };
 		B20145C015BBBFC100576005 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BF15BBBFC100576005 /* CoreGraphics.framework */; };
@@ -65,6 +69,10 @@
 		30DE5CA915BC7E3C0017585D /* TCDeviceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCDeviceDelegate.h; path = Games4u/thirdparty/TCDeviceDelegate.h; sourceTree = "<group>"; };
 		30DE5CAA15BC7E3C0017585D /* TCPresenceEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPresenceEvent.h; path = Games4u/thirdparty/TCPresenceEvent.h; sourceTree = "<group>"; };
 		30DE5CAB15BC7E3C0017585D /* TwilioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwilioClient.h; path = Games4u/thirdparty/TwilioClient.h; sourceTree = "<group>"; };
+		30DE5CAE15BC85320017585D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		30DE5CB015BC85530017585D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		30DE5CB215BC85600017585D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		30DE5CB415BC857D0017585D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B20145B715BBBFC100576005 /* Games4u.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Games4u.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20145BB15BBBFC100576005 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B20145BD15BBBFC100576005 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +129,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30DE5CB515BC857D0017585D /* SystemConfiguration.framework in Frameworks */,
+				30DE5CB315BC85600017585D /* AVFoundation.framework in Frameworks */,
+				30DE5CB115BC85530017585D /* AudioToolbox.framework in Frameworks */,
+				30DE5CAF15BC85320017585D /* CFNetwork.framework in Frameworks */,
 				B20145BC15BBBFC100576005 /* UIKit.framework in Frameworks */,
 				B20145BE15BBBFC100576005 /* Foundation.framework in Frameworks */,
 				B20145C015BBBFC100576005 /* CoreGraphics.framework in Frameworks */,
@@ -144,6 +156,10 @@
 		B20145AC15BBBFC100576005 = {
 			isa = PBXGroup;
 			children = (
+				30DE5CB415BC857D0017585D /* SystemConfiguration.framework */,
+				30DE5CB215BC85600017585D /* AVFoundation.framework */,
+				30DE5CB015BC85530017585D /* AudioToolbox.framework */,
+				30DE5CAE15BC85320017585D /* CFNetwork.framework */,
 				B20145FF15BBC39000576005 /* thirdparty */,
 				B20145C115BBBFC100576005 /* Games4u */,
 				B20145E215BBBFC200576005 /* Games4uTests */,
