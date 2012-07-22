@@ -3,7 +3,7 @@
         {% for u in users %}
             {% if u.username != user.username %}
                 <a href="/chat/{{ u.username }}">{{ u.username }}</a><br /><br />
-            {% end % }
+            {% end %}
         {% end %}
     </body>
 </html>
