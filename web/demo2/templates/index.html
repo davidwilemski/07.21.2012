@@ -17,6 +17,7 @@
             };
 
             function getToken(token, username) {
+                alert(username);
                 $(".push_button").on("click", function () {
                     $.get('/sendpush/' + token);
                 });
