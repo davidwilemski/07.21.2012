@@ -26,7 +26,7 @@ class CreateHandler(base.BaseHandler):
 class InfoHandler(base.BaseHandler):
     @web.asynchronous
     def get(self, appname):
-        app = models.App.objects(appname=appname).first()
+        app = models.App.objects(name=appname).first()
         if app is None:
             raise web.HTTPError(404)
         self.finish(app.to_dict())
