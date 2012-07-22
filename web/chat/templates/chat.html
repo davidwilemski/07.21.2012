@@ -1,5 +1,8 @@
 <html>
     <body>
+        <br />
+        <br />
+        <h1>Chat with {{ otheruser }}</h1>
         {% for t, msg in chat.messages.items() %}
             {{ msg['msg'] }}
             <br />

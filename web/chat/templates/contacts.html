@@ -1,8 +1,8 @@
 <html>
     <body>
+        <br />
+        <br />
         <h1>Contacts</h1>
-        <br />
-        <br />
         {% for u in users %}
             {% if u.username != user.username %}
                 <a href="/chat/{{ u.username }}">{{ u.username }}</a><br /><br />
