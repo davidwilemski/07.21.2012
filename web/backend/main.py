@@ -34,5 +34,5 @@ def main():
 
 if __name__ == '__main__':
     tornado.options.parse_command_line()
-    mongoengine.connect('greylock', options.mongo)
+    mongoengine.connect('greylock')
     main()
