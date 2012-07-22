@@ -4,6 +4,16 @@ from tornado import web
 import base
 import models
 
+import twilio
+import voip_settings
+
+def gen_token(name):
+    token = twilio.util.TwilioCapability(
+            conf.sid,
+            conf.auth_token)
+    token.allow_client_outgoing(conf.appid)
+    return token
+
 class LoginHandler(base.BaseHandler):
     @web.asynchronous
     def get(self):
@@ -17,5 +27,6 @@ class LoginHandler(base.BaseHandler):
             user = models.User(username=username, device_token=device_token)
         user.device_token = device_token
         user.save()
-        self.finish()
 
+        token = gen_token(username)
+        self.finish({'token': token.generate()})

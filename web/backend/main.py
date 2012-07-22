@@ -29,6 +29,8 @@ def main():
         (r"/apps/info/([a-zA-z0-9]+)", 'apps.InfoHandler'),
 
         (r"/login", 'users.LoginHandler'),
+
+        (r"/twiml", 'voip.TwimlHandler'),
     ], **settings)
 
     application.listen(options.port)
