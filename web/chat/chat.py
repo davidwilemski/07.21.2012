@@ -36,8 +36,10 @@ class MainHandler(BaseHandler):
         self.redirect('/chat')
 
 class ChatHandler(BaseHandler):
+    @tornado.web.authenticated
     def get(self):
         """ returns list of chat contacts"""
+        user = self.get_current_user()
         users = models.User.objects
         self.render('contacts.html', users=users)
 

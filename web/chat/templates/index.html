@@ -17,15 +17,13 @@
             };
 
             function getToken(token, user) {
-                $(".push_button").on("click", function () {
                     $.post('/', 
                         {
-                            username: username, 
+                            username: user, 
                             device_token: token}, 
                         function() {
                             window.location = '/chat';
                     });
-                });
             }
         </script>
     </body>
