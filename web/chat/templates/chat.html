@@ -1,6 +1,6 @@
 <html>
     <body>
-        {% for time, c in chat %}
+        {% for time, c in chat.items() %}
             {{ c.msg }}
             <br />
         {% end %}
