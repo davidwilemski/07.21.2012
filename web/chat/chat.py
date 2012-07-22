@@ -63,7 +63,7 @@ class ChatRoomHandler(BaseHandler):
         otheruser = models.User.objects(username=otheruser).first()
 
         # send push to other user
-        yield gen.Task(push_client.send_push, otheruser.device_token, 'chat', 'http://23.21.143.75:9999/chat/' + user.username)
+        yield gen.Task(push_client.send_push, otheruser.device_token, 'chat', 'http://23.21.143.75:9999/chat/' + user.username, msg)
         self.redirect('/chat/' + otheruser.username)
 
 
