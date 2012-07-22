@@ -11,3 +11,8 @@ class App(mongoengine.Document):
         d = {'appname': self.name, 'domain': self.domain, 
                 'iphone_icon': self.iphone_icon, 'ipad_icon': self.ipad_icon}
         return d
+
+class User(mongoengine.Document):
+    username = mongoengine.StringField(required=True, unique=True)
+    device_token = mongoengine.StringField(required=True)
+
