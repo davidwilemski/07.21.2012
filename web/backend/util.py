@@ -13,7 +13,7 @@ def do_push(device_token, alert, properties, sound=True, sandbox=True):
 
     # create wrapper
     if sandbox:
-        wrapper = APNSWrapper.APNSNotificationWrapper('apns_cert.pem', True)
+        wrapper = APNSWrapper.APNSNotificationWrapper('aps_cert.pem', True)
     else:
         wrapper = APNSWrapper.APNSNotificationWrapper('apns_cert_prod.pem', True)
 
