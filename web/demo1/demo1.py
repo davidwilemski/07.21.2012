@@ -3,10 +3,12 @@ import tornado.web
 import os
 from tornado import gen
 import push_client
+import logging
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        print '/'
+        logger = logging.getLogger('demo1')
+        logger.info("at /")
         self.render("index.html")
 
 class PushHandler(tornado.web.RequestHandler):
