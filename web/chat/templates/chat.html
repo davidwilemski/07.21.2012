@@ -3,9 +3,8 @@
         <br />
         <br />
         <h1>Chat with {{ otheruser }}</h1>
-        {% for t, msg in chat.messages.items() %}
-            {{ msg['msg'] }}
-            <br />
+        {% for t, msg in sorted(chat.messages.iteritems()) %}
+            <p>{{ msg['author'] }}: {{ msg['msg'] }}</p>
         {% end %}
 
         <form action="/chat/{{ otheruser }}" method="POST">
