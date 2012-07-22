@@ -16,7 +16,7 @@
             };
 
             function getToken(token) {
-                $(".push_token").on("click", function () {
+                $(".push_button").on("click", function () {
                     $.get('/sendpush/' + token);
                 });
             }

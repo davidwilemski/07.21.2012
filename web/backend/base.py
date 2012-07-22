@@ -1,5 +1,5 @@
 
-from tornado import web, auth
+from tornado import web, auth, escape
 
 class BaseHandler(web.RequestHandler):
     def get_json(self):
