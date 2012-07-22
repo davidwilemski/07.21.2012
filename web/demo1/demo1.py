@@ -6,6 +6,7 @@ import push_client
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
+        print '/'
         self.render("index.html")
 
 class PushHandler(tornado.web.RequestHandler):
@@ -13,7 +14,7 @@ class PushHandler(tornado.web.RequestHandler):
     @tornado.gen.engine
     def get(self, device_token):
         yield gen.Task(push_client.send_push, device_token, 'demo1', 'http://23.21.143.75:8889')
-        self.redirect('/')
+        self.finish('ok')
 
 
 settings = {
