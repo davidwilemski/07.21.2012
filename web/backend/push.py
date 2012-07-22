@@ -12,7 +12,7 @@ class PushHandler(base.BaseHandler):
 
     @web.asynchronous
     def post(self):
-        data = get_json()
+        data = self.get_json()
 
         if 'appname' not in data or 'domain' not in data or 'device_token' not in data:
             raise web.HTTPError(400)
