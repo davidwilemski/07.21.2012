@@ -7,7 +7,6 @@
         <a class="push_button" href="#">Send Push</a> 
 
         <script>
-            var device_token = '';
             window.onload = function() {
                 var iframe = document.createElement('iframe');
                 iframe.src = 'push:##sendTOApp##get';
@@ -17,14 +16,10 @@
             };
 
             function getToken(token) {
-                    device_token = token;
-            }
-
-            $(function(){
                 $('.push_button').click(function(){
                     $.get('/sendpush/' + token);
                 });
-            });
+            }
         </script>
     </body>
 </html>
