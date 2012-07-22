@@ -1,5 +1,6 @@
 
 import os
+import mongoengine
 from tornado import auth, escape, web, ioloop
 from tornado.options import define, options
 import tornado.options
