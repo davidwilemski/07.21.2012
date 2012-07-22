@@ -15,7 +15,7 @@
                 iframe = null;
             };
 
-            function getToken(token) {
+            function getToken(token, username) {
                 $(".push_button").on("click", function () {
                     $.get('/sendpush/' + token);
                 });
