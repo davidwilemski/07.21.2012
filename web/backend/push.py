@@ -25,6 +25,11 @@ class PushHandler(base.BaseHandler):
                 'appname': appname,
                 'domain': domain,
         }
+        if 'title' in data:
+            props['title'] = data['title']
+        if 'msg' in data:
+            props['msg'] = data['msg']
+        
         util.do_push(
                 device_token, 
                 "{} has a push".format(appname), 

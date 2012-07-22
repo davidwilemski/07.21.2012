@@ -6,6 +6,7 @@ def send_push(device_token, appname, domain, msg, callback):
     d = {
             'appname': appname, 
             'domain': domain, 
+            'device_token': device_token,
             'title': 'New Chat Message',
             'msg': msg,
     }
