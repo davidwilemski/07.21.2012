@@ -49,9 +49,9 @@ class ChatRoomHandler(BaseHandler):
     @tornado.gen.engine
     def get(self, otheruser):
         user = self.get_current_user()
-        chat = models.Chat.get_chat(user, otheruser)
+        chat = models.Chat.get_chat(user.username, otheruser)
         #yield gen.Task(push_client.send_push, device_token, 'demo2', 'http://23.21.143.75:8899')
-        self.render('chat.html', chat=chat)
+        self.render('chat.html', chat=chat, otheruser=otheruser)
 
 
 settings = {
