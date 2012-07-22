@@ -50,8 +50,22 @@ class ChatRoomHandler(BaseHandler):
     def get(self, otheruser):
         user = self.get_current_user()
         chat = models.Chat.get_chat(user.username, otheruser)
-        #yield gen.Task(push_client.send_push, device_token, 'demo2', 'http://23.21.143.75:8899')
         self.render('chat.html', chat=chat, otheruser=otheruser)
+
+    @tornado.web.authenticated
+    @tornado.web.asynchronous
+    @tornado.gen.engine
+    def post(self, otheruser):
+        msg = self.get_argument('msg', '')
+        user = self.get_current_user()
+        chat = models.Chat.get_chat(user.username, otheruser)
+        chat.add_msg(user.username, msg)
+        otheruser = models.User.objects(username=otheruser).first()
+
+        # send push to other user
+        yield gen.Task(push_client.send_push, otheruser.device_token, 'demo2', 'http://23.21.143.75:8899')
+        self.redirect('/chat/' + otheruser.username)
+
 
 
 settings = {
