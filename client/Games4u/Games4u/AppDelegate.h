@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TCDevice.h"
+#import "TCConnection.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -15,6 +17,8 @@
 @property (strong, nonatomic) NSData *pushNotificationToken;
 @property (strong, nonatomic) NSString *currentUser;
 @property (strong, nonatomic) NSString *currentUrl;
+@property (nonatomic, retain) TCDevice *_device;
+@property (nonatomic, retain) TCConnection *_connection;
 
 -(NSString*)getConcantenatedHostUrl:(NSString*)path;
 - (NSString *)hexadecimalStringWithData:(NSData*)data;

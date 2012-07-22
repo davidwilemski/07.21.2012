@@ -40,7 +40,12 @@
 
 - (void)HTTPRequestFinished:(NSMutableDictionary *)body
 {
-    NSLog(@"hey");
+    NSString *token = [body objectForKey:@"token"];
+    NSLog(@"Twilio Token: %@", token);
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    app._device = [[TCDevice alloc] initWithCapabilityToken:token
+                                                   delegate:app];
+    
     [self performSegueWithIdentifier:@"LoginSegue" sender:self];
 }
 
