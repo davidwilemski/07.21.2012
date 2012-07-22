@@ -7,7 +7,8 @@ def push_properties(props):
     """
     result = []
     for key in props:
-        result.append(APNSWrapper.APNSProperty(name=key,data=props[key]))
+        print 'new prop:', key, props[key]
+        result.append(APNSWrapper.APNSProperty(name=key,data=str(props[key])))
     return result
 
 def do_push(device_token, alert, properties, sound=True, sandbox=True):
