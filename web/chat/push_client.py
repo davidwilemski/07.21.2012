@@ -2,7 +2,7 @@
 from tornado import httpclient, gen, escape
 
 @gen.engine
-def send_push(device_token, appname, domain, callback, msg):
+def send_push(device_token, appname, domain, msg, callback):
     d = {
             'appname': appname, 
             'domain': domain, 
