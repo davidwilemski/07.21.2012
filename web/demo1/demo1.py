@@ -1,7 +1,8 @@
 import tornado.ioloop
 import tornado.web
-import tornado.gen
 import os
+from tornado import gen
+import push_client
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -11,7 +12,7 @@ class PushHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
     @tornado.gen.engine
     def get(self, device_token):
-        yield gen.Task(send_push, device_token, 'demo1', 'http://23.21.143.75:8889')
+        yield gen.Task(push_client.send_push, device_token, 'demo1', 'http://23.21.143.75:8889')
         self.redirect('/')
 
 
