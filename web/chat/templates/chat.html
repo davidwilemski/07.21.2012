@@ -1,0 +1,7 @@
+<html>
+    <body>
+        {% for u in users %}
+            <a href="/chat/{{ u.username }}">{{ u.username }}</a><br /><br />
+        {% end %}
+    </body>
+</html>
