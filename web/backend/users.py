@@ -8,6 +8,7 @@ import twilio
 import twilio.util
 import voip_settings
 
+conf = voip_settings.VoipSettings()
 def gen_token(name):
     token = twilio.util.TwilioCapability(
             conf.sid,
