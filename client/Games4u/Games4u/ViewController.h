@@ -29,4 +29,5 @@
 -(void)incrementImgLoadCount;
 -(void)displayImageSubViews;
 -(void)displayCurrentWebView;
+-(void)openUrl:(NSString*)url;
 @end

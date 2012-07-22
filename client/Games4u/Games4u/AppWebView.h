@@ -12,10 +12,11 @@
 {
     BOOL delegateReadyToDisplay;
     BOOL finishedLoading;
-    id delegate;
+    id controllerDelegate;
 }
 
-@property (nonatomic, strong) id delegate;
+@property (nonatomic, strong) id controllerDelegate;
+- (id)initWithDelegate:(id)d;
 - (void) showWebView;
 - (BOOL) shouldOpenLinksExternally;
 - (void) webView:(UIWebView *)webView;

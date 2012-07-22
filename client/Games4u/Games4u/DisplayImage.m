@@ -16,7 +16,7 @@
 @synthesize delegate = _delegate;
 @synthesize domain = _domain;
 
-- (id) initWithURL:(NSString*)url andDomain:(NSString*)domain andIndex:(int)idx andDelegate:(id)delegate {
+- (id) initWithURL:(NSString*)url andDomain:(NSString*)domain andIndex:(int)idx andDelegate:(id)d {
     self = [super init];
     if(self) {
         [self makeHTTPConnection:url withParams:[[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:@"GET", @"", nil] forKeys:[NSArray arrayWithObjects:@"request_method", @"body", nil]]];
@@ -27,7 +27,7 @@
         [self.layer setShadowOffset:CGSizeMake(0.0, 2.0)];
         [self.layer setShadowOpacity:0.6];
         [self.layer setShadowRadius:3.0];
-        self.delegate = delegate;
+        self.delegate = d;
         index = idx;
     }
     return self;
@@ -82,9 +82,13 @@
     [self setImage:img];
     CGRect frame;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        frame = CGRectMake(24.0, 86.0, 192.0, 256.0);
+        float xadd = (48.0+192.0) * (index % 3);
+        float yadd = (64.0+256.0) * floor(index/3);
+        frame = CGRectMake(48.0 + xadd, 64.0+yadd, 192.0, 256.0);
     } else {
-        frame = CGRectMake(80.0, 86.0, 160.0, 240.0);
+        float xadd = (20.0+80.0) * (index % 3);
+        float yadd = (30.0+120.0) * floor(index/3);
+        frame = CGRectMake(20.0+xadd, 30.0+yadd, 80.0, 120.0);
     }
     [self setFrame:frame];
     [self setContentMode:UIViewContentModeScaleAspectFit];

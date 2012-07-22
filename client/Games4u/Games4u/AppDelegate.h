@@ -13,7 +13,10 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *hostURL;
 @property (strong, nonatomic) NSData *pushNotificationToken;
+@property (strong, nonatomic) NSString *currentUser;
+@property (strong, nonatomic) NSString *currentUrl;
 
 -(NSString*)getConcantenatedHostUrl:(NSString*)path;
+- (NSString *)hexadecimalStringWithData:(NSData*)data;
 
 @end

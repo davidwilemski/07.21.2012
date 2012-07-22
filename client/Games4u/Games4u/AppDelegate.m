@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize hostURL = _hostURL;
 @synthesize pushNotificationToken = _pushNotificationToken;
+@synthesize currentUser = _currentUser;
+@synthesize currentUrl = _currentUrl;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,23 +23,51 @@
     self.hostURL = @"http://23.21.143.75:8888";
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-    
-    /*if(launchOptions != nil) { 
+    if(launchOptions != nil) { 
         NSDictionary* dict = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-        if(dict != nil && ![self.usercookie isEqualToString:@""]) {
-            if([self.is_verified isEqualToString:@"Yes"])
-                [self addMessageFromRemoteNotification:dict updateUI:NO];
-            else 
-                self.push_dict = dict;
+        if(dict != nil) {
+            [self addMessageFromRemoteNotification:dict updateUI:NO];
         }
-    }*/
+    }
     return YES;
 }
-				
+		
+- (void) addMessageFromRemoteNotification:(NSMutableDictionary*)dict updateUI:(BOOL)update {
+    [(ViewController*)self.window.rootViewController openUrl:[dict objectForKey:@"domain"]];
+}
+
 - (void)application:(UIApplication*) application  didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     NSLog(@"MY device token is: %@", deviceToken);
     self.pushNotificationToken = deviceToken;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    if([title isEqualToString:@"Accept"]) {
+        [(ViewController*)self.window.rootViewController openUrl:self.currentUrl];
+    }
+        
+}
+
+//Convert push notification token to hex
+- (NSString *)hexadecimalStringWithData:(NSData*)data {
+    /* Returns hexadecimal string of NSData. Empty string if data is empty.   */
+    
+    const unsigned char *dataBuffer = (const unsigned char *)[data bytes];
+    
+    if (!dataBuffer)
+        return [NSString string];
+    
+    NSUInteger          dataLength  = [data length];
+    NSMutableString     *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    
+    for (int i = 0; i < dataLength; ++i)
+        [hexString appendString:[NSString stringWithFormat:@"%02x", (unsigned long)dataBuffer[i]]];
+    
+    return [NSString stringWithString:hexString];
 }
 
 -(void) application:(UIApplication*) application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
@@ -45,7 +76,10 @@
 }
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
-	
+    NSLog(@"Push Notification: %@", userInfo);
+    self.currentUrl = [userInfo objectForKey:@"domain"];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[userInfo objectForKey:@"title"] message:[userInfo objectForKey:@"msg"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Accept", nil];
+    [alert show];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		308D2A7615BC045D00070C9D /* AppWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7515BC045D00070C9D /* AppWebView.m */; };
+		308D2A7A15BC755500070C9D /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7915BC755500070C9D /* LoginPageViewController.m */; };
+		308D2A7D15BC77EF00070C9D /* LoginSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D2A7C15BC77EF00070C9D /* LoginSegue.m */; };
 		B20145BC15BBBFC100576005 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BB15BBBFC100576005 /* UIKit.framework */; };
 		B20145BE15BBBFC100576005 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BD15BBBFC100576005 /* Foundation.framework */; };
 		B20145C015BBBFC100576005 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20145BF15BBBFC100576005 /* CoreGraphics.framework */; };
@@ -51,6 +53,10 @@
 /* Begin PBXFileReference section */
 		308D2A7415BC045D00070C9D /* AppWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppWebView.h; sourceTree = "<group>"; };
 		308D2A7515BC045D00070C9D /* AppWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppWebView.m; sourceTree = "<group>"; };
+		308D2A7815BC755500070C9D /* LoginPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPageViewController.h; sourceTree = "<group>"; };
+		308D2A7915BC755500070C9D /* LoginPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPageViewController.m; sourceTree = "<group>"; };
+		308D2A7B15BC77EF00070C9D /* LoginSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSegue.h; sourceTree = "<group>"; };
+		308D2A7C15BC77EF00070C9D /* LoginSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSegue.m; sourceTree = "<group>"; };
 		B20145B715BBBFC100576005 /* Games4u.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Games4u.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20145BB15BBBFC100576005 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B20145BD15BBBFC100576005 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,6 +170,8 @@
 				B20145CB15BBBFC100576005 /* AppDelegate.m */,
 				B20145CD15BBBFC100576005 /* MainStoryboard_iPhone.storyboard */,
 				B20145D015BBBFC100576005 /* MainStoryboard_iPad.storyboard */,
+				308D2A7815BC755500070C9D /* LoginPageViewController.h */,
+				308D2A7915BC755500070C9D /* LoginPageViewController.m */,
 				B20145D315BBBFC100576005 /* ViewController.h */,
 				B20145D415BBBFC100576005 /* ViewController.m */,
 				308D2A7415BC045D00070C9D /* AppWebView.h */,
@@ -173,6 +181,8 @@
 				B20145FB15BBC06000576005 /* BaseViewController.h */,
 				B20145FC15BBC06000576005 /* BaseViewController.m */,
 				B20145C215BBBFC100576005 /* Supporting Files */,
+				308D2A7B15BC77EF00070C9D /* LoginSegue.h */,
+				308D2A7C15BC77EF00070C9D /* LoginSegue.m */,
 			);
 			path = Games4u;
 			sourceTree = "<group>";
@@ -364,6 +374,8 @@
 				B201462415BBC3A000576005 /* SBJsonWriter.m in Sources */,
 				B201462715BBC7E400576005 /* DisplayImage.m in Sources */,
 				308D2A7615BC045D00070C9D /* AppWebView.m in Sources */,
+				308D2A7A15BC755500070C9D /* LoginPageViewController.m in Sources */,
+				308D2A7D15BC77EF00070C9D /* LoginSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,10 +483,12 @@
 		B20145EE15BBBFC200576005 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Haefner (E9A44Q5JR4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Games4u/Games4u-Prefix.pch";
 				INFOPLIST_FILE = "Games4u/Games4u-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF02CB4D-C4CD-4AFE-A77F-17A2DEE1D211";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
