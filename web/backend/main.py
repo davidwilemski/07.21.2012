@@ -27,6 +27,8 @@ def main():
         (r"/apps", 'apps.ListHandler'),
         (r"/apps/create", 'apps.CreateHandler'),
         (r"/apps/info/([a-zA-z0-9]+)", 'apps.InfoHandler'),
+
+        (r"/login", 'users.LoginHandler'),
     ], **settings)
 
     application.listen(options.port)
