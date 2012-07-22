@@ -1,3 +1,6 @@
+
+import APNSWrapper
+
 def push_properties(props):
     """
     takes a dictionary and converts it into APNSProperties
