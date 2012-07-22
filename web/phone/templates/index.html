@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <br />
+        <br />
+        <h1>Phone</h2>
+        <input type="text" name="number" id="number" />
+        <input type="submit" name="submit" id="submit"  value="Call"/>
+
+        <script>
+            window.onload = function() {
+                $('.submit').click(function() {
+                    var iframe = document.createElement('iframe');
+                    iframe.src = 'call:##sendToApp##' + $('#number').val();
+                    document.documentElement.appendChild(iframe);
+                    iframe.parentNode.removeChild(iframe);
+                    iframe = null;
+                });
+            };
+
+            function getToken(token, username) {
+                alert(username);
+                $(".push_button").on("click", function () {
+                    //$.get('/sendpush/' + token);
+                    // do stuff to call twilio here
+                });
+            }
+        </script>
+    </body>
+</html>
